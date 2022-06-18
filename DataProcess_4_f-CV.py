@@ -26,8 +26,7 @@ D_Barrier = 23/1e7                                                              
 Radius = 70/10000                                                                       #CV测试图形的半径（针对圆形），单位um，此处除10000后单位为cm
 #Radius = float(input('请输入CV测试图形的半径(um):'))/10000
 Temp = 300                                                                              #测试温度
-
-#C_on =                                                                                 #判定第二台阶出现的电容值，单位F
+Step2Condition = 3.4e-11                                                                #判定条件对应的电容值，单位F
 '''-----------------------------------------------------------'''
 
 
@@ -38,12 +37,9 @@ Temp = 300                                                                      
 Vaccum_DielectricConstant = 8.854187817e-14                                             #真空介电常数
 Al_composition = 0.23                                                                   #AlGaN势垒层Al组分
 MIS_DielectricConstant = 9.4                                                            #介质介电常数，9.4 for pre-PDA-Al2O3，8.9 for post-PDA-Al2O3[1]
-Step2Condition = 3.4e-11                                                                #第二个台阶开启的电容判定条件
 K = 8.6173324e-5                                                                        #玻尔兹曼常数
 q = 1.602e-19                                                                           #电荷量
-#v_th =
 CaptureCrossSection = 1e-14                                                             #电子俘获截面[2]
-
 Size = Radius*Radius*math.pi                                                            #math.pi是圆周率，此处计算CV测试图形的面积
 Barrier_DielectricConstant = 8.9-(8.9-8.5)*Al_composition                               #计算得AlGaN势垒层介电常数,8.9 for GaN，8.5 for AlN
 C_ox = MIS_DielectricConstant*Vaccum_DielectricConstant*Size/(D_MIS*Size)               #计算得介质层电容
