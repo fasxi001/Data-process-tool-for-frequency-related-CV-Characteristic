@@ -23,7 +23,7 @@ DOI:10.1109/TED.2015.2420690
 
 界面态在禁带的能级上连续分布，只有费米能级附近的界面态会响应外部的小信号变化；定义界面态缺陷时间常数对应的频率为$f_{it}$，则有公式(1)，由于时间常数较长的界面态来不及响应更快的交流小信号，所以当界面态缺陷对应的频率高于测试小信号的频率时，界面态缺陷才会影响CV测试的结果
 
-![image](https://github.com/fasxi001/Data-process-tool-for-frequency-related-CV-Characteristic/blob/main/MEDIA/Fig_1.png)
+![image]([https://github.com/fasxi001/Data-process-tool-for-frequency-related-CV-Characteristic/blob/main/MEDIA/Fig_1.png]#pic_center)
 
 $$f_{it} = {{1} \over {2 \pi \tau_e}} = {{v_{th} \sigma_n N_C} \over 2 {\pi}} exp(-{{E_C-E_T} \over {kT}}) \tag{1}$$
 
@@ -33,7 +33,8 @@ $\tau_e$是陷阱释放电子的时常数，$v_{th}$是电子热运动速率，$
 
 根据上述现象，给定不同的CV测试频率，则电容离开平台开始上升的电压值也会相应变化；例如较低的测试频率下，能级位置更深的界面态也会响应测试小信号，则CV曲线会更早的离开平台，进入第二个上升斜坡(更低的膝电压)；两条不同频率的CV测试曲线，对应的第二个上升斜坡的膝电压值($V_{ON}$)之间存在差距$\Delta V_{ON}$，这一部分差距的来源就是更高频率下不响应的低频界面态(能级更深)，据此就可以特异的表征出不同能级位置的界面态的态密度
 
-![image](https://github.com/fasxi001/Data-process-tool-for-frequency-related-CV-Characteristic/blob/main/MEDIA/Fig_2.png) ![image](https://github.com/fasxi001/Data-process-tool-for-frequency-related-CV-Characteristic/blob/main/MEDIA/Fig_3.png)
+![image]([https://github.com/fasxi001/Data-process-tool-for-frequency-related-CV-Characteristic/blob/main/MEDIA/Fig_2.png]#pic_center)
+![image]([https://github.com/fasxi001/Data-process-tool-for-frequency-related-CV-Characteristic/blob/main/MEDIA/Fig_3.png]#pic_center)
 
 $$ D_{it}(E_C-E_T = \Delta E_{T\_AVG}) = {{C_{ox} · \Delta V_{on}} \over {q · \Delta E_{dis}}} - {{C_{ox}+C_B} \over {q^2}} \tag{2}$$
 
