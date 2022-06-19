@@ -118,7 +118,7 @@ for j in range(len(xlsx_list)):                                                 
         col[j] += 1
     Von.append(getV_pd[j][col[j]])                                                      #利用所得到的行数，输出第二个台阶的开启电压Von
     Freq_sort.append(df_sort['Frequency'][j])                                           #排序后的频率
-    Energy.append(-K*Temp * math.log(Freq_sort[j] * 2 math.pi / (ThermalVelocity_e * CaptureCrossSection * N_C)))   #根据频率计算能级位置
+    Energy.append(-K*Temp * math.log(Freq_sort[j] * 2 * math.pi / (ThermalVelocity_e * CaptureCrossSection * N_C)))   #根据频率计算能级位置
 
 #    deltaE.append(K*Temp*math.log())
 
@@ -145,7 +145,7 @@ print('Dit为'+str(Dit))
 print('对应的能级位置为'+str(Energy))
 for k in range(len(xlsx_list)-1):
     print('%E' % Dit[k])
-Dit.append(0) 
+Dit.append(str(Energy)) 
 
 
 
