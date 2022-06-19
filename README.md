@@ -25,8 +25,7 @@ DOI:10.1109/TED.2015.2420690
 
 ![image](https://github.com/fasxi001/Data-process-tool-for-frequency-related-CV-Characteristic/blob/main/MEDIA/Fig_1.png)
 
-$$f_{it} = {{1} \over {2 \pi \tau_e}} = {{v_{th} \sigma_n N_C} \over 2 {\pi}} exp(-{{E_C-E_T} \over {kT}}) 
-\tag{1}$$
+$$f_{it} = {{1} \over {2 \pi \tau_e}} = {{v_{th} \sigma_n N_C} \over 2 {\pi}} exp(-{{E_C-E_T} \over {kT}})$$
 
 <center>
 
@@ -43,17 +42,13 @@ $\tau_e$是陷阱释放电子的时常数，$v_{th}$是电子热运动速率，$
 
 计算界面态密度所用的公式如下所示：
 
-$$ D_{it}(E_C-E_T = \Delta E_{T\_AVG}) = {{C_{ox} · \Delta V_{on}} \over {q · \Delta E_{dis}}} - {{C_{ox}+C_B} \over {q^2}} 
-\tag{2}$$
+$$ D_{it}(E_C-E_T = \Delta E_{T\_AVG}) = {{C_{ox} · \Delta V_{on}} \over {q · \Delta E_{dis}}} - {{C_{ox}+C_B} \over {q^2}}$$
 
-$$\Delta E_{T\_AVG} = {{\Delta E_T(f_1,T_1) + \Delta E_T(f_2,T_2)} \over {2}} 
-\tag{3}$$
+$$\Delta E_{T\_AVG} = {{\Delta E_T(f_1,T_1) + \Delta E_T(f_2,T_2)} \over {2}}$$
 
-$$\Delta E_{dis} = \Delta E_T(f_1,T_1) - \Delta E_T(f_2,T_2) 
-\tag{4}$$
+$$\Delta E_{dis} = \Delta E_T(f_1,T_1) - \Delta E_T(f_2,T_2)$$
 
-$$\Delta V_{ON} = V_{ON} (f_2,T_2) - V_{ON}(f_1,T_1) 
-\tag{5}$$
+$$\Delta V_{ON} = V_{ON} (f_2,T_2) - V_{ON}(f_1,T_1)$$
 
 
 
