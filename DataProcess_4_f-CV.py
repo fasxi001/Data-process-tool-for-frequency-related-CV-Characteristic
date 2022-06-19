@@ -19,7 +19,7 @@ import matplotlib.pyplot as plt
 
 
 '''-------------------------------------------------------------
-需要输入的参数
+根据测试需要输入的参数
 -------------------------------------------------------------'''
 D_MIS = 20/1e7                                                                          #栅介质厚度，单位nm，此处除1e7后单位为cm
 D_Barrier = 23/1e7                                                                      #势垒层厚度，单位nm，此处除1e7后单位为cm
@@ -40,6 +40,8 @@ MIS_DielectricConstant = 9.4                                                    
 K = 8.6173324e-5                                                                        #玻尔兹曼常数
 q = 1.602e-19                                                                           #电荷量
 CaptureCrossSection = 1e-14                                                             #电子俘获截面[2]
+ThermalVelocity_e = 2.6e7                                                               #电子热运动速率
+N_C = 2.2e18                                                                            #导带态密度
 Size = Radius*Radius*math.pi                                                            #math.pi是圆周率，此处计算CV测试图形的面积
 Barrier_DielectricConstant = 8.9-(8.9-8.5)*Al_composition                               #计算得AlGaN势垒层介电常数,8.9 for GaN，8.5 for AlN
 C_ox = MIS_DielectricConstant*Vaccum_DielectricConstant*Size/(D_MIS*Size)               #计算得介质层电容
@@ -74,6 +76,7 @@ num = []
 col = []
 Freq = []
 Freq_sort = []
+Energy = []
 Von = []
 delta_Edis = []
 delta_Von = []
@@ -105,9 +108,9 @@ for j in range(len(xlsx_list)):                                                 
     print(df_sort['FileName'][j])                                                       #打印当前循环体到达的文件位置
 
     getData_xls.append(pd.read_excel(df_sort['FileName'][j],sheet_name='Data'))         #通过pd.read_excel模块和xlrd模块将按照频率排序后第j个xls文件的Data页转换为pd数据格式，并扩展给getData_xls变量
-    getC_pd.append(getData_xls[j].loc[:,'C'])                                           #获取电容数据，添加到get_pd列表中(缺省)
+    getC_pd.append(getData_xls[j].loc[:,'C'])                                           #获取电容数据，添加到getC_pd列表中(缺省)
 #    getC_pd.append(abs(getData_xls[j].loc[:,'C']))                                     #测试电容值取绝对值（optional）
-    getV_pd.append(getData_xls[j].loc[:,'V'])                                           #获取电压数据
+    getV_pd.append(getData_xls[j].loc[:,'V'])                                           #获取电压数据,添加到getV_pd列表中
     
     
     col.append(0)
@@ -115,6 +118,7 @@ for j in range(len(xlsx_list)):                                                 
         col[j] += 1
     Von.append(getV_pd[j][col[j]])                                                      #利用所得到的行数，输出第二个台阶的开启电压Von
     Freq_sort.append(df_sort['Frequency'][j])                                           #排序后的频率
+    Energy.append(-K*Temp * math.log(Freq_sort[j] * 2 math.pi / (ThermalVelocity_e * CaptureCrossSection * N_C)))   #根据频率计算能级位置
 
 #    deltaE.append(K*Temp*math.log())
 
@@ -138,6 +142,7 @@ for k in range(len(xlsx_list)-1):
 print('delta_Edis为'+str(delta_Edis))
 print('delta_Von为'+str(delta_Von))
 print('Dit为'+str(Dit))
+print('对应的能级位置为'+str(Energy))
 for k in range(len(xlsx_list)-1):
     print('%E' % Dit[k])
 Dit.append(0) 

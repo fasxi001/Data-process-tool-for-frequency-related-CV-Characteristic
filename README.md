@@ -42,6 +42,8 @@ $\tau_e$是陷阱释放电子的时常数，$v_{th}$是电子热运动速率，$
 
 计算界面态密度所用的公式如下所示：
 
+$$\Delta E_T(f_m,T_m) = kT_mln({v_{th} \sigma_n N_C \over 2 \pi f_m})$$
+
 $$ D_{it}(E_C-E_T = \Delta E_{T\_AVG}) = {{C_{ox} · \Delta V_{on}} \over {q · \Delta E_{dis}}} - {{C_{ox}+C_B} \over {q^2}}$$
 
 $$\Delta E_{T\_AVG} = {{\Delta E_T(f_1,T_1) + \Delta E_T(f_2,T_2)} \over {2}}$$
